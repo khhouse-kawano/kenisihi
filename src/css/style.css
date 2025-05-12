@@ -1,0 +1,774 @@
+:root {
+    --green: #9fc238;
+}
+
+body {
+    font-family: "Noto Sans JP", serif !important;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden !important;
+    background-color: #000;
+}
+
+html {
+    background-color: #000;
+}
+
+header {
+    background: url('/images/header_parts.png')no-repeat;
+    background-size: 26%;
+    background-position: 100% 100%;
+    background-color: var(--green);
+    height: 16vw;
+    width: 100%;
+}
+
+header .row {
+    width: 100%;
+    overflow-x: hidden !important;
+}
+
+header .hamburger {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: black;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+}
+
+header .hamburger::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: black;
+    top: 8px;
+    right: 0px;
+    cursor: pointer;
+}
+
+header .hamburger::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: black;
+    top: 16px;
+    right: 0px;
+    cursor: pointer;
+}
+
+header .hamburger.open {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: transparent;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    transition: .3s;
+    z-index: 100;
+}
+
+header .hamburger.open::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    top: 10px;
+    right: 0px;
+    cursor: pointer;
+    transform: rotate(45deg);
+    transition: .3s;
+    z-index: 100;
+}
+
+header .hamburger.open::after {
+    content: "";
+    position: absolute;
+    z-index: 1000;
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    top: 10px;
+    right: 0px;
+    cursor: pointer;
+    transform: rotate(-45deg);
+    transition: .3s;
+    z-index: 100;
+}
+
+.hamburger_menu {
+    position: absolute;
+    z-index: 10;
+    background-color: #0000008f;
+    top:0;
+    right: -100%;
+    height: 100vh;
+    padding-top: 70px;
+    transition: 1s; /* ここに追加してみてください */
+    overflow-x: hidden !important;
+    display: none;
+    opacity: 0;
+}
+
+.hamburger_menu.open {
+    transform: translateX(-100%);
+    display: block;
+    opacity: 1;
+    z-index: 10;
+    padding-left: calc(50% + 70px);
+    overflow-x: hidden !important;
+    transition: 1s; /* ここに追加してみてください */
+}
+
+@media screen and (min-width:768px) {
+    header {
+        background-size: 310px;
+        height: 100px;
+    }
+
+    header .hamburger {
+        width: 40px;
+        height: 4px;
+        top: 12px;
+        right: 12px;
+    }
+
+    header .hamburger::before {
+        width: 40px;
+        height: 4px;
+        top: 10px;
+    }
+
+    header .hamburger::after {
+        width: 40px;
+        height: 4px;
+        top: 20px;
+    }
+
+    header .hamburger.open {
+        width: 40px;
+        height: 4px;
+        top: 12px;
+        right: 12px;
+    }
+
+    header .hamburger.open::before {
+        width: 40px;
+        height: 4px;
+        top: 12px;
+    }
+
+    header .hamburger.open::after {
+        width: 40px;
+        height: 4px;
+        top: 12px;
+    }
+
+    .hamburger_menu {
+        padding-top: 50px;
+    }
+
+    .hamburger_menu.open {
+        padding-left: 90%;
+    }
+}
+
+.secFv {
+    width: 100%;
+    background-color: #000;
+    position: relative;
+    z-index: 1;
+}
+
+.secFv::before {
+    position: absolute;
+    z-index: 10;
+    top: 40vw;
+    left: calc(50% - 135px);
+    content: "THE TECHNO GOD IS COMING.";
+    color: transparent;
+    z-index: 10;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    width: 270px;
+    /*文字の長さ*/
+    overflow: hidden;
+    /*必須*/
+    white-space: nowrap;
+    /*必須*/
+    line-height: 1.4;
+    animation: typing 20s steps(21), blink .6s step-end;
+    /*アニメーション関連*/
+}
+
+.secFv::after {
+    position: absolute;
+    content: "";
+    z-index: 0;
+    top: 0;
+    width: 100%;
+    animation: fade 20s;
+    height: 100vh;
+    background: url('/images/fv_sp_20250108.png')no-repeat;
+    background-size: 100%;
+    background-position: top;
+}
+
+/* .secFv .title_logo {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 70vw;
+    position: relative;
+    z-index: 10;
+    animation: fade 20s infinite;
+}
+
+.support_dj {
+    width: 90%;
+    margin: -7vw auto 0;
+    animation: fade 20s infinite;
+
+}
+
+.shop_info {
+    width: 70%;
+    margin: 0 auto;
+    animation: fade 20s infinite;
+}
+
+.copy_title {
+    animation: fade 20s;
+
+} */
+
+/* .lead{
+    width: 70%;
+    margin:0 auto;
+} */
+
+.secFv .title_logo img,
+.support_dj img,
+.shop_info img,
+.lead img {
+    width: 100%;
+}
+
+.copy_title {
+    padding-top: 155vw;
+    animation: fade 20s;
+}
+
+
+.copy_title h1 {
+    font-weight: 800;
+    font-size: 7vw;
+}
+
+.copy_title p {
+    font-weight: 600;
+    font-size: 4vw;
+    width: 85%;
+    margin: 0 auto;
+    line-height: 6vw;
+    text-align: justify;
+}
+
+.copy_title p span{
+    font-size: 2.5vw;
+}
+
+.copy_title .small{
+    font-size: 3.5vw;
+    line-height: 5.5vw;
+}
+
+.copy_title .map {
+    width: 85%;
+    margin: 0 auto;
+    height: 60vw;
+}
+
+.copy_title a .banner {
+    width: 85%;
+    margin-left: 7.5%;
+    font-size: 4vw;
+    font-weight: 700;
+    background-color: var(--green);
+}
+
+.copy_title .img {
+    width: 50%;
+    margin-left: 25%;
+}
+
+.youtube {
+    text-align: center;
+    width: 85%;
+    max-width: 768px;
+}
+
+iframe {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: 100%;
+    max-width: 960px !important;
+}
+
+.secFv .line {
+    background-color: var(--green);
+    height: 1px;
+}
+
+.secFv .line.flash {
+    animation: flash .45s step-end infinite;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    35% {
+        opacity: 1;
+
+    }
+
+    90%{
+        opacity: 1;
+    }
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+        color: #fff;
+        text-shadow: 0px 0px 7px var(--green), 0px 0px 10px var(--green);
+        border-right: 2px solid var(--green);
+    }
+
+    25% {
+        width: 270px;
+        color: #fff;
+        text-shadow: 0px 0px 7px var(--green), 0px 0px 10px var(--green);
+        border-right: 2px solid var(--green);
+        /*点滅バー*/
+    }
+
+    28% {
+        color: transparent;
+        text-shadow: none;
+        border-right: 2px solid transparent;
+        opacity: 1;
+        /*点滅バー*/
+    }
+
+    100% {
+        opacity: 0;
+        color: transparent;
+        text-shadow: none;
+        border-right: 2px solid transparent;
+        /*点滅バー*/
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+        /*点滅風に見せる*/
+    }
+}
+@media screen and (min-width:768px) {
+    .secFv {
+        width: 100%;
+        background-color: #000;
+        position: relative;
+        z-index: 10;
+    }
+    
+    .secFv::before {
+        position: absolute;
+        z-index: 10;
+        top: 230px;
+        left: calc(50% - 250px);
+        content: "THE TECHNO GOD IS COMING.";
+        color: transparent;
+        z-index: 10;
+        font-weight: 800;
+        font-size: 1.7rem;
+        letter-spacing: 3px;
+        width: 500px;
+        /*文字の長さ*/
+        /*点滅バー*/
+        overflow: hidden;
+        /*必須*/
+        white-space: nowrap;
+        /*必須*/
+        line-height: 1.4;
+        animation: typing 20s steps(21), blink .6s step-end;
+        /*アニメーション関連*/
+    }
+    
+    @keyframes typing {
+        0% {
+            width: 0;
+            color: #fff;
+            text-shadow: 0px 0px 7px var(--green), 0px 0px 10px var(--green);
+            border-right: 2px solid var(--green);
+        }
+    
+        25% {
+            width: 500px;
+            color: #fff;
+            text-shadow: 0px 0px 7px var(--green), 0px 0px 10px var(--green);
+            border-right: 2px solid var(--green);
+            /*点滅バー*/
+        }
+    
+        28% {
+            color: transparent;
+            text-shadow: none;
+            border-right: 2px solid transparent;
+            /*点滅バー*/
+        }
+    
+        100% {
+            color: transparent;
+            text-shadow: none;
+            border-right: 2px solid transparent;
+            /*点滅バー*/
+        }
+    }
+    
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+            /*点滅風に見せる*/
+        }
+    }
+    
+    .secFv::after {
+        position: absolute;
+        content: "";
+        z-index: 0;
+        top: 0;
+        width: 100%;
+        height: 230vh;
+        background: url('/images/fv_sp_20250108.png')no-repeat;
+        background-size: 80%;
+        background-position: 50% 0%;
+    }
+
+    .secFv .title_logo {
+        width: 960px;
+        padding-top: 612px;
+    }
+
+    .support_dj {
+        width: 900px;
+        margin: -30px auto 0;
+    }
+
+    .shop_info {
+        width: 500px;
+        padding: 20px 0 80px;
+    }
+
+    .copy_title {
+        padding-top: 124vw;
+    }
+
+    .copy_title h1 {
+        font-size: 2.3rem;
+    }
+    
+    .copy_title p {
+        font-size: 1.3rem;
+        width: 768px;
+        margin: 0 auto;
+        line-height: 2.5rem;
+    }
+
+    
+.copy_title p span{
+    font-size: 1rem;
+}
+
+    .copy_title .small {
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+    
+    .copy_title .map {
+        width: 768px;
+        margin: 0 auto;
+        height: 450px;
+    }
+    
+    .copy_title a .banner {
+        width: 600px;
+        margin-left:calc( 50% - 300px) ;
+        font-size: 1rem;
+        font-weight: 700;
+        background-color: var(--green);
+    }
+
+    .copy_title .img {
+        width: 300px;
+        margin:0 auto ;
+    }
+    
+}
+
+.secTicket {
+    background-color: #000;
+}
+
+.secTicket .ttl{
+    color: var(--green);
+    font-weight: 900;
+    font-style: italic;
+    font-size: 10vw;
+    transform: rotate(-7deg);
+}
+
+.secTicket .lead{
+    width: 85%;
+    margin: 0 auto;
+    font-size: 3.4vw;
+    font-weight: 600;
+}
+
+.secTicket .flow{
+    width: 85%;
+    margin: 0 auto;
+    font-size: 4vw;
+    font-weight: 600;
+    border: 2px solid var(--green);
+}
+
+.secTicket .arrow{
+    width: 10vw;
+    margin: 0 auto;
+}
+
+.secTicket .txt {
+    background-color: #fff;
+    width: 85%;
+    font-size: .75rem;
+}
+
+.secTicket .form {
+    width: 85%;
+}
+
+.secTicket .form input {
+    border: 2px solid var(--green);
+}
+
+.secTicket .form .form_1 {
+    width: 100%;
+    background-color: var(--green);
+    font-weight: 700;
+}
+
+.secTicket .attention{
+    font-size: .875rem;
+}
+
+@media screen and (min-width:768px) {
+    .secTicket .ttl{
+        font-size: 4rem;
+    }
+    
+    .secTicket .lead{
+        width: 600px;
+        font-size: 1.5rem;
+    }
+
+    .secTicket .txt {
+        width: 600px;
+    }
+
+    .secTicket .flow{
+        width: 600px;
+        font-size: 1.2rem;
+    }
+
+    .secTicket .arrow{
+        width: 50px;
+    }
+
+    .secTicket .form {
+        width: 600px;
+    }
+}
+
+.secFurafura {
+    background-color: #000;
+}
+
+.secFurafura .ttl {
+    width: 85%;
+}
+
+.secFurafura .ttl img {
+    width: 100%;
+}
+
+.secFurafura .member {
+    width: 85%;
+}
+
+.secFurafura .member h2 {
+    font-weight: 700;
+}
+
+.secFurafura .member p {
+    font-weight: 600;
+    font-size: .75rem;
+    text-align: justify;
+}
+
+.secFurafura a .banner {
+    width: 100%;
+    font-size: 4vw;
+    font-weight: 700;
+    background-color: var(--green);
+}
+
+@media screen and (min-width:768px) {
+    .secFurafura .ttl {
+        width: 400px;
+    }
+
+    .secFurafura .member {
+        width: 768px;
+    }
+
+    .secFurafura .member p {
+        font-size: .875rem;
+        line-height: 1.5rem;
+    }
+
+    .secFurafura a .banner {
+        width: 600px;
+        margin: calc( 50% - 300px);
+        font-size: 1rem;
+    }
+}
+
+footer {
+    background-color: #000;
+}
+
+footer .insta {
+    width: 25%;
+}
+
+footer .insta img {
+    width: 100%;
+}
+
+footer .sponsor {
+    font-size: 1.25rem;
+}
+
+footer .logo {
+    background: url('/images/footer.png')no-repeat;
+    background-size: 100%;
+    text-align: center;
+    padding: 17px 0 10px;
+}
+
+footer .logo img {
+    width: 200px;
+}
+
+@media screen and (min-width:768px) {
+    footer .insta {
+        width: 250px;
+    }
+
+    footer .sponsor {
+        font-size: 2rem;
+        padding-top: 60px;
+    }
+
+    footer .logo {
+        padding: 40px 0 20px;
+    }
+
+    footer .logo img {
+        width: 400px;
+    }
+}
+
+/* fadeup */
+
+.up {
+    -webkit-animation-name: fadeUpAnime;
+    animation-name: fadeUpAnime;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fadeUpAnime {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(100px);
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUpAnime {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(100px);
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+.fadeup {
+    opacity: 0;
+    /*非表示*/
+}
